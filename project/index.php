@@ -21,9 +21,6 @@
             <input type="submit" value= "Регистрация" />
             </form>
         </div>
-        <?php
-        
-        ?>
     </div>
     
 </body>
