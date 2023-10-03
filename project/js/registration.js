@@ -3,7 +3,7 @@ $(document).ready(function() {
     window.location.href = '../index.php';
   });
 
-  $('.addUser').click(function() {
+  $('#addUser').click(function() {
     var username = $('#username').val();
     var email = $('#email').val();
     checkUnique(username, email);
