@@ -19,7 +19,6 @@
         <div class ="registration-container">
             <form id = 'reg' action="registration.php">
             <input type="submit" value= "Регистрация" />
-            </form>
         </div>
     </div>
     
