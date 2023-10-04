@@ -29,7 +29,7 @@ body {
 }
 
 .login-container input[type="email"],
-.login-container input[type="password"] {
+.login-container input[type="text"] {
   width: 95%;
   padding: 8px;
   font-size: 16px;
@@ -57,14 +57,4 @@ body {
   color: red;
   font-weight: bold;
   text-align: center;
-}
-.registration-container input[value= "Регистрация"] {
-  width: 100%;
-  padding: 10px;
-  font-size: 16px;
-  border: none;
-  border-radius: 5px;
-  background-color: #ddd012;
-  color: #fff;
-  cursor: pointer;
 }

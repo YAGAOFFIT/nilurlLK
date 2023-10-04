@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Окт 02 2023 г., 16:16
+-- Время создания: Окт 04 2023 г., 00:42
 -- Версия сервера: 8.0.30
 -- Версия PHP: 8.1.9
 
@@ -42,7 +42,7 @@ CREATE TABLE `mail` (
 --
 
 CREATE TABLE `users` (
-  `userId` int NOT NULL,
+  `userId` varchar(30) NOT NULL,
   `username` char(20) NOT NULL,
   `email` char(40) NOT NULL,
   `password` char(8) NOT NULL
