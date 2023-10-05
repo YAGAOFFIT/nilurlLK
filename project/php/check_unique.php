@@ -28,9 +28,9 @@ if ($resultEmail->num_rows > 0) {
     echo 'not_unique';
     exit;
 }
-
-$stmtEmail->close();
 $conn->close();
+$stmtEmail->close();
+
 
 echo 'unique';
 ?>

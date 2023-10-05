@@ -19,7 +19,11 @@ function checkLoginData(email, password) {
       if (response === 'correct') {
         window.location.href = "main.php";
       } else {
-        console.log('Не верно');
+        Swal.fire({
+          icon: 'error',
+          title: 'Ошибка входа',
+          text: 'Неправильный логин или пароль.',
+        });
       }
     },
     error: function(xhr, status, error) {
