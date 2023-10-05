@@ -21,8 +21,17 @@ function checkUnique(username, email) {
     success: function(response) {
       if (response === 'unique') {
         uniqueUser(username, email);
+        Swal.fire({
+          icon: 'success',
+          title: 'Ваш аккаунт был создан',
+          text: 'Пароль для входа был отправлен на вашу почту',
+        });
       } else {
-        console.log('Не уникальные');
+        Swal.fire({
+          icon: 'error',
+          title: 'Данный аккаунт уже существует',
+          text: 'Выполните вход или восстановите аккаунт',
+        });
       }
     },
     error: function(xhr, status, error) {
