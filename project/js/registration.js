@@ -43,7 +43,7 @@ function checkUnique(username, email) {
 function uniqueUser(username, email) {
   var userId = "user" + Date.now();
   saveUser(userId, email, username);
-  emailSend(email, username, "newPswd");
+  emailSend(userId, email, username, "newPswd");
 }
 
 function saveUser(userId, email, username) {
@@ -64,11 +64,12 @@ function saveUser(userId, email, username) {
   });
 }
 
-function emailSend(email, username, type) {
+function emailSend(userId, email, username, type) {
   $.ajax({
     url: "../php/email_send.php",
     method: "POST",
     data: {
+      userId:userId,
       email: email,
       username: username,
       type: type

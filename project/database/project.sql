@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Окт 04 2023 г., 00:42
+-- Время создания: Окт 09 2023 г., 02:04
 -- Версия сервера: 8.0.30
 -- Версия PHP: 8.1.9
 
@@ -28,12 +28,21 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `mail` (
-  `id` int NOT NULL,
+  `id` varchar(30) NOT NULL,
   `type` char(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT 'resetPswd',
-  `expiresTime` datetime(6) NOT NULL,
-  `code` int DEFAULT NULL,
-  `userId` int NOT NULL
+  `expiresTime` datetime(6) DEFAULT NULL,
+  `code` varchar(10) DEFAULT NULL,
+  `userId` char(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Дамп данных таблицы `mail`
+--
+
+INSERT INTO `mail` (`id`, `type`, `expiresTime`, `code`, `userId`) VALUES
+('0', '0', NULL, '0', '0'),
+('1', 'newPswd', NULL, 'SLIMLXgv', 'user1696803664230'),
+('2', 'newPswd', NULL, 'lcqSytcH', 'user1696805539757');
 
 -- --------------------------------------------------------
 
@@ -43,10 +52,21 @@ CREATE TABLE `mail` (
 
 CREATE TABLE `users` (
   `userId` varchar(30) NOT NULL,
-  `username` char(20) NOT NULL,
+  `username` char(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `email` char(40) NOT NULL,
-  `password` char(8) NOT NULL
+  `password` varchar(250) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Дамп данных таблицы `users`
+--
+
+INSERT INTO `users` (`userId`, `username`, `email`, `password`) VALUES
+('', '', '', ''),
+('user1696803249222', 'ыавыа', 'fdsfds@gmail.com', '$2y$10$Jrw2ddAtHnReVsxtEvjnrecZkYeiqtH2MyGYioucEzd0xvw34gsN.'),
+('user1696803589697', 'dsadasd', 'wlad2axz1sahgdfa@gmail.com', '$2y$10$9SqLpNz9mIvT2Gg64.TtYuvJ5pMirDJ5aH7p6S7i8Fk9IYEN9sfnK'),
+('user1696803664230', 'wdaaaa', 'wdsazz1alad21sahgdfa@gmail.com', '$2y$10$wunZIg1ZsZONNwpeIeTv3eK7ymwFPNo59PDBfyk54BB5tqIlRaniy'),
+('user1696805539757', 'zcxzzz', 'dsad@mail.ru', '$2y$10$CHRn24Rsj9LAzNqcFfIRXegg7IUp1VcCD/lFf4tpzxIe854P4WKQK');
 
 --
 -- Индексы сохранённых таблиц
