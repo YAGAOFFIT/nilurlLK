@@ -10,7 +10,7 @@
 
 #header-container {
   max-width: 1180px;
-  padding: 0px 15px;
+  padding: 7px 15px;
   margin: 0 auto;
 }
 
@@ -89,7 +89,7 @@
 
 /* Стили для #sorting */
 #sorting {
-  /* Добавьте здесь стили для #sorting, если необходимо */
+
 }
 
 
@@ -139,7 +139,7 @@
 
 #slash-after-logo  {
   margin-left: -20px;
-  margin-right: 20px;
+  margin-right: 8px;
 }
 
 #circle-for-user-letter {
@@ -252,7 +252,7 @@ html {
   transition-property: all;
   transition-timing-function: cubic-bezier(.4,0,.2,1);
   transition-duration: 75ms;
-  padding-left: 2.25rem; /* Увеличьте отступ слева для добавления пространства перед иконкой */
+  padding-left: 2.25rem;
 }
 
 #profile-text{  
