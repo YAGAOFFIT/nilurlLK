@@ -39,28 +39,36 @@
 }
 
 /* Стили для <main> */
-#main {
+.main {
   background-color: rgb(249, 250, 251);
 }
 
 /* Стили для #main-border */
-#main-border {
+.main-border {
   border-bottom: 2px solid rgb(242, 243, 245);
   background-color: white;
 }
 
+#main-border-settings-page{
+	margin-bottom: 83px;
+}
+
 /* Стили для #main-container */
-#main-container {
+.main-container {
   max-width: 1180px;
   padding: 0px 15px;
   margin: 0 auto;
 }
 
-#links-container {
+#links-container, #settings-title-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 50px 0px;
+}
+
+#settings-title-container{
+	padding: 53.5px 0px;
 }
 
 .links-button {
@@ -104,7 +112,7 @@
 
 
 
-#content-container.container {
+.content-container.container {
   max-width: 1180px;
   padding: 0px 15px;
   margin: 0 auto;
@@ -112,7 +120,7 @@
   align-items: flex-start;
 }
 
-#content-container.container {
+.content-container.container {
   max-width: 1180px;
   padding: 0px 15px;
   margin: 0 auto;
@@ -120,7 +128,7 @@
   align-items: flex-start;
 }
 
-#left-content {
+#left-content{
   margin-right: 20px;
   margin-left: 0px;
   background-color: white;
@@ -131,7 +139,19 @@
   border: 2px solid rgb(242, 243, 245);
 }
 
-#right-content {
+#left-content-settings-page{
+	margin-right: 20px;
+	margin-left: 2px;
+	margin-top: 2px;
+	width: 300px;
+	/* height: 300px; */
+	padding: 20px;
+	/* border-radius: 8px; */
+	/* border: 2px solid rgb(242, 243, 245); */
+  }
+  
+
+.right-content {
   width: 100%;
   background-color: white;
   margin-bottom: 50px;
@@ -140,6 +160,26 @@
   text-align: center;
   align-items:center;
 }
+
+.settings-page-right-block {
+	width: 100%;
+	background-color: white;
+	margin-bottom: 10px;
+	border-radius: 8px;
+	border: 2px solid rgb(242, 243, 245);
+	text-align: center;
+	align-items:center;
+  }
+
+.settings-page-right-content {
+	width: 100%;
+	background-color: white;
+	margin-bottom: 50px;
+	border-radius: 8px;
+	/* border: 2px solid rgb(242, 243, 245); */
+	text-align: center;
+	align-items:center;
+  }
 
 .row-reverse {
   display: flex;
@@ -182,7 +222,7 @@ html {
   font-family: Arial, Helvetica, sans-serif; 
 }
 
-#my-links{
+#my-links, #settings-title{
   font-size: 25px;
   color: rgb(98, 106, 119);
   font-weight: 400;
@@ -266,7 +306,7 @@ html {
 }
 
 #profile-text{  
-  font-size: 13px;
+  font-size: 15px;
 }
 
 *{
@@ -313,6 +353,15 @@ html {
 	margin-top: .5rem;
 	font-weight: 600;
 }
+
+.container-of-title-of-main-settings h3{
+	font-size: inherit;
+	margin: 0;
+	margin-left: .25rem;
+	margin-top: .5rem;
+	font-weight: 600;
+}
+
 .search-iner__input {
 	position: relative;
 }
@@ -541,6 +590,11 @@ html {
 	margin-left: 15px;
 }
 
+#title-of-main-settings{
+	margin-left: -15px;	
+	margin-top: -15px;
+}
+
 #add-tag-button{
 	background-color: white;
 	padding: 5px 10px;
@@ -548,5 +602,29 @@ html {
 	border-radius: 5px;
 	color: rgb(170, 170, 170);
 }
+
+#header-functional-link{
+	margin-right: 20px;
+}
+
+#header-links{
+	padding-top: 5px;
+	padding-bottom: -20px;
+	margin-bottom: -20px;
+}
+
+#header-functional-link, #header-help-link {
+  margin-right: 20px;
+  margin-top: 10px;
+  font-size: 13px;
+  text-decoration: none;
+  color: black;
+}
+
+#header-functional-link, #header-help-link {
+	font-size: 15px; 
+  }
+  
+  
 
   /*  */

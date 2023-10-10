@@ -4,35 +4,15 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=1">
   <title>Document</title>
 </head>
 <body>
   <div id="wrapper" class="wrapper">
-    <header>
-      <div id="header-border">
-        <div id="header-container" class="container">
-          <div id="profile-container" class="profile-container">
-            <div id="logo-container">
-              <!-- <div id="logo">logo</div> -->
-              <img id="logo" src="images/svg189-tamq.svg" alt="SVG189" class="frame-svg3">
-              <img id="slash-after-logo" src="images/svgmargin1019-g2i.svg" alt="SVGmargin192" class="frame-sv-gmargin1">   
-              <span class="initial-letter">A</span>           
-              <img id="circle-for-user-letter" src="images/circle.png" class="frame-svg3">
-              <div id="profile-text">Название профиля</div>
-              <!-- <img id="arrows-after-profile-name" src="images/svg1104-118w.svg" alt="SVG1104" class="frame-svg4"> -->
-            </div>
-            <div id="logo-with-dot-container">
-              <span class="initial-letter">A</span>   
-              <img id="circle-for-user-letter-with-dot" src="images/circle-with-dot.png" class="frame-svg3">
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
-    <main id="main">
-      <div id="main-border">
-        <div id="main-container" class="container">
+  <?php include 'header.php'; ?>
+    <main class="main">
+      <div class="main-border">
+        <div class="main-container container">
           <div id="links-container">
             <div><h1 id="my-links">Мои ссылки</h1></div>
               <button class="links-button">
@@ -57,7 +37,7 @@
         </div>
       </div>
       
-      <div id="content-container" class="container">
+      <div class="content-container container">
         <div id="left-content" class="search">
           <div class="search-iner">
             <div class="search-iner__link">
@@ -136,7 +116,7 @@
           </div>
         </div>   
 
-        <div id="right-content">          
+        <div class="right-content">          
           <h2 id="result-of-searching-links">
             Ссылок не найдено
           </h2>
