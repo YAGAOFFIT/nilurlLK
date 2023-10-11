@@ -1,24 +1,44 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8"> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Регистрация</title>
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     <script src="js/registration.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="styles/registration_style.css">
-    
 </head>
 <body>
-    <div class="login-container">
-        <h2>Регистрация</h2>
-        <label for="username">Имя пользователя:</label>
-        <input type="text" name="username" id="username" required>
+    <div class="d1">
+        <div class="d2_1">
+        <div class="slider-thumb"></div>
 
-        <label for="email">Почта:</label>
-        <input type="email" name="email" id="email" required>
-        <input id ="addUser" type="submit" value= "Подтвердить" />
+        </div>
+        <div class="d2_2">
+            <div class="d3_1">
+                <a href="https://nil-agency.ru" class="a3_1">
+                    <image />
+                    <img src="img/nil logo icon.svg" width="40" />
+                </a>
+                <h3 class="h3">Регистрация в NILUrl</h3>
+                <p class="p1">Начните создавать короткие ссылки.</p>
+            </div>
+            <div class="d3_2">
+                
+                <form class="f3_1">
+                <input type="text" data-t="field:input-login" dir="ltr" aria-invalid="false" autocorrect="off" autocapitalize="off" autocomplete="username" class="in3_1" id="passp-field-username" name="login" placeholder="Имя пользователя" value=""/>
+                </form>
+                <form class="f3_2">
+                <input type="text" data-t="field:input-login" dir="ltr" aria-invalid="false" autocorrect="off" autocapitalize="off" autocomplete="username" class="in3_1" id="passp-field-email" name="email" placeholder="email" value=""/>
+                </form>
+                <button type="button" id ="addUser" class="b3">
+                    <p class="p2">Зарегистрироваться</p>
+                </button>
+                <p class="p3_1">Уже имеете аккаунт?<a class="a3_2" href="/index.html">Войти</a>.</p>
+            </div>
+        </div>
     </div>
 </body>
 </html>

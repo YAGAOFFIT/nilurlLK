@@ -4,8 +4,8 @@ $(document).ready(function() {
   });
 
   $('#addUser').click(function() {
-    var username = $('#username').val();
-    var email = $('#email').val();
+    var username = $("#passp-field-username").val();
+    var email = $("#passp-field-email").val();
     checkUnique(username, email);
   });
 });
