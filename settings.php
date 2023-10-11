@@ -28,20 +28,36 @@
 
         <div class="settings-page-right-content">
           <div class="settings-page-right-block">
-            1
+            <h4 id="settings-page-label-for-name">Ваше имя</h4>
+            <p id="settings-page-comment-for-name">Будет отображаться в на Nil.</p>
+            <input type="text" id="setting-page-input-name" class="input-on-settings-page" value="Артемий Журавлёв">
           </div>
-          <div class="settings-page-right-block">
-            2
+          <div class="settings-page-right-block-lower-part">
+            <p id="settings-page-right-block-comment-for-name">Максимум 32 символа</p>
+            <button id="settings-page-right-block-save-name-button">Сохранить</button>
           </div>
+
           <div class="settings-page-right-block">
-            3
+            <h4 id="settings-page-label-for-email">Ваш email</h4>
+            <p id="settings-page-comment-for-email">Привяжите вашу почту.</p>
+            <input type="text" id="setting-page-input-email" class="input-on-settings-page" value="artemiy0709@gmail.com">
+          </div>
+          <div class="settings-page-right-block-lower-part">
+            <p id="settings-page-right-block-comment-for-email">Email должен быть действительным</p>
+            <button id="settings-page-right-block-save-email-button">Сохранить</button>
+          </div>
+
+          <div class="settings-page-right-block-for-deletion">
+            <h4 id="settings-page-label-for-deletion">Удалить аккаунт</h4>
+            <p id="settings-page-comment-for-deletion">Навсегда удалите аккаунт, вместе с ним удалятся все ссылки</p>
+          </div>
+          <div class="settings-page-right-block-lower-part-for-deletion">
+            <button id="settings-page-right-block-delete-accaunt-button">Удалить аккаунт</button>
           </div>
         </div>
-
       </div>
     </main>
-  </div>
-  
+  </div>  
   
   <script src="main.js"></script>
 </body>

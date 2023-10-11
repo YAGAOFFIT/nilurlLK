@@ -164,12 +164,48 @@
 .settings-page-right-block {
 	width: 100%;
 	background-color: white;
-	margin-bottom: 10px;
-	border-radius: 8px;
+	margin-bottom: -2px;
+	border-radius: 8px 8px 0 0; 
 	border: 2px solid rgb(242, 243, 245);
-	text-align: center;
-	align-items:center;
-  }
+	text-align: left;
+	align-items: left;
+	padding: 40px 40px 30px 40px;
+}
+
+.settings-page-right-block-for-deletion {
+	width: 100%;
+	background-color: white;
+	margin-bottom: -2px;
+	border-radius: 8px 8px 0 0; 
+	border: 2px solid rgb(239, 68, 68);
+	text-align: left;
+	align-items: left;
+	padding: 40px 40px 30px 40px;
+}
+
+.settings-page-right-block-lower-part {
+	width: 100%;
+	background-color: rgb(249, 250, 251);
+	margin-bottom: 20px;
+	border-radius: 0 0 8px 8px; 
+	border: 2px solid rgb(242, 243, 245);
+	text-align: left;
+	align-items: left;
+	padding: 5px 40px;
+	justify-content: space-between;
+}
+
+.settings-page-right-block-lower-part-for-deletion {
+	width: 100%;
+	/* background-color: rgb(249, 250, 251); */
+	margin-bottom: 20px;
+	border-radius: 0 0 8px 8px; 
+	border: 2px solid rgb(239, 68, 68);
+	text-align: right;
+	align-items: right;
+	padding: 5px 40px;
+	justify-content: right;
+}
 
 .settings-page-right-content {
 	width: 100%;
@@ -623,8 +659,66 @@ html {
 
 #header-functional-link, #header-help-link {
 	font-size: 15px; 
-  }
+}
   
-  
+.input-on-settings-page {
+	/* width: 200px; */
+	width: 55%;	
+	font-family: inherit;
+	font-weight: inherit;
+	margin: 0;
+	appearance: none;
+	background-color: #fff;
+	padding: .5rem .75rem;
+	--tw-shadow: 0 0 #0000;
+	border-radius: .375rem;
+	border-width: 1px;
+	--tw-border-opacity: 1;
+	border: none;
+	border-color: rgb(209 213 219/var(--tw-border-opacity));
+	/* box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; */
+	border: 2px solid rgb(242, 243, 245);
+	/* padding-left: 2.5rem; */
+	font-size: .95rem;
+	line-height: 1.25rem;
+	--tw-text-opacity: 1;
+	color: rgb(0 0 0/var(--tw-text-opacity));
+	margin-bottom: 10px;
+}
+
+#settings-page-label-for-name, #settings-page-label-for-email, #settings-page-label-for-deletion{
+	font-size: 20px;
+	font-weight: 500;
+}
+
+#settings-page-comment-for-name, #settings-page-comment-for-email, #settings-page-comment-for-deletion{
+	margin-bottom: 20px;
+	color: grey;
+}
+
+.settings-page-right-block-lower-part {
+	display: flex;
+	flex-direction: row; /* По умолчанию flex-direction равен row, но можно явно указать для ясности */
+	align-items: center; /* Это центрирует элементы вертикально внутри flex-контейнера */
+	color: grey;
+	font-size: 15px;
+}
+
+#settings-page-right-block-save-name-button, #settings-page-right-block-save-email-button{
+	color: grey;
+	background-color: rgb(243, 244, 246);
+	padding: 8px 10px;
+	border-radius: 5px;
+	border: 2px solid rgb(227, 230, 235);
+}
+
+#settings-page-right-block-delete-accaunt-button{
+	color: white;
+	background-color: rgb(239, 68, 68);
+	padding: 8px 10px;
+	border-radius: 5px;
+	margin: 5px 0px;
+	/* border: 2px solid rgb(227, 230, 235);	 */
+}
 
   /*  */
