@@ -6,13 +6,13 @@ $(document).ready(function() {
   $('#addUser').click(function() {
     var username = $("#passp-field-username").val();
     var email = $("#passp-field-email").val();
-    checkRegistrarionData(username, email);
+    checkRegistrationData(username, email);
   });
 });
 
-function checkRegistrarionData(username, email) {
+function checkRegistrationData(username, email) {
   $.ajax({
-    url: '../php/check_registrarionData.php',
+    url: '../php/check_registrationData.php',
     method: 'POST',
     data: {
       username: username,
