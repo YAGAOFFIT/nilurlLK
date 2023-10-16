@@ -4,34 +4,55 @@ $(document).ready(function() {
   });
 
   $('#addUser').click(function() {
-    var username = $('#username').val();
-    var email = $('#email').val();
-    checkUnique(username, email);
+    var username = $("#passp-field-username").val();
+    var email = $("#passp-field-email").val();
+    checkRegistrationData(username, email);
   });
 });
 
-function checkUnique(username, email) {
+function checkRegistrationData(username, email) {
   $.ajax({
-    url: '../php/check_unique.php',
+    url: '../php/check_registrationData.php',
     method: 'POST',
     data: {
       username: username,
       email: email
     },
     success: function(response) {
-      if (response === 'unique') {
-        uniqueUser(username, email);
-        Swal.fire({
-          icon: 'success',
-          title: 'Ваш аккаунт был создан',
-          text: 'Пароль для входа был отправлен на вашу почту',
-        });
-      } else {
-        Swal.fire({
-          icon: 'error',
-          title: 'Данный аккаунт уже существует',
-          text: 'Выполните вход или восстановите аккаунт',
-        });
+      switch (response) {
+        case 'invalid_username':
+          Swal.fire({
+            icon: 'error',
+            title: 'Неправильное имя пользователя',
+            text: 'Имя пользователя не может быть меньше 3 символов. Так же можно использовать только буквы английского алфавита, цифры и символ "_"',
+          });
+          break;
+        case 'invalid_email':
+          Swal.fire({
+            icon: 'error',
+            title: 'Неправильный Email',
+            text: 'Почта имеет неправильный формат',
+          });
+          break;
+        case 'unique':
+          uniqueUser(username, email);
+          Swal.fire({
+            icon: 'success',
+            title: 'Ваш аккаунт был создан',
+            text: 'Пароль для входа был отправлен на вашу почту',
+            html: '<a href="index.html">Вернуться на страницу входа</a> ',
+          });
+          break;
+        case 'not_unique':
+          Swal.fire({
+            icon: 'error',
+            title: 'Данный аккаунт уже существует',
+            text: 'Выполните вход или восстановите аккаунт',
+          });
+          break;
+        default:
+          console.error('Неизвестный ответ от сервера:', response);
+          break;
       }
     },
     error: function(xhr, status, error) {
@@ -39,7 +60,6 @@ function checkUnique(username, email) {
     }
   });
 }
-
 function uniqueUser(username, email) {
   var userId = "user" + Date.now();
   saveUser(userId, email, username);
