@@ -14,3 +14,25 @@ list.addEventListener('click', () =>{
 
 
 
+
+
+
+const openModalButton = document.getElementById('openModalButton');
+openModalButton.addEventListener('click', openModal);
+
+const closeButton = document.querySelector('.close');
+closeButton.addEventListener('click', closeModal);
+
+function openModal() {
+	document.getElementById("myModal").style.display = "flex";
+	document.getElementById("modal-background").style.display = "block"; // Показываем фон
+  }
+  
+  function closeModal() {
+	console.log(1);
+	document.getElementById("myModal").style.display = "none";
+	document.getElementById("modal-background").style.display = "none"; // Скрываем фон
+  }
+  
+
+  

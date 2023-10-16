@@ -4,10 +4,41 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css?v=1">
+    <link rel="stylesheet" href="style.css?v=22">
   <title>Document</title>
 </head>
 <body>
+
+  <div id="modal-background"></div>
+  <!-- Модальное окно -->
+  <div id="myModal" class="modal" onclick="closeModal()">
+    <div class="modal-content" onclick="event.stopPropagation();">
+      <img id="img-in-modal-window" src="images/grey-circle.png" alt="">
+      <h2 id="modal-window-create-link">Создать ссылку</h2>
+
+      <div id="center-part-of-modal-window">
+        <label id="modal-window-label-for-input-long-link" for="modal-window-input-long-link">Длинная ссылка</label>
+        <input type="text" id="modal-window-input-long-link" class="input-on-modal-window" placeholder="https://t.me/nilurl">
+        <div id="modal-window-row-with-label-and-button">
+          <label id="modal-window-label-for-input-short-link" for="modal-window-input-short-link">Сокращенная ссылка</label>
+          <button id="modal-window-button-for-generating-link"><img id="image-for-generate-button" src="images/svg1042-arb8.svg" alt="SVG1042" class="create-link-svg"> Сгенерировать</button>
+        </div>
+        <div id="modal-window-wrapper-for-long-link">
+          <select name="modal-window-select-link" id="modal-window-select-link">
+              <option value="nil.url.ru" selected>nil.url.ru</option>
+              <option value="nil.url2.ru">nil.url2.ru</option>
+          </select>
+          <input type="text" id="modal-window-input-short-link" class="input-on-modal-window" placeholder="nilurl">
+        </div>
+      </div>
+
+      <button class="links-button-2" onclick="console.log(1)">
+        <div class="create-link-text-2">Создать ссылку</div>
+      </button><br>
+      <!-- <button onclick="closeModal()">Закрыть</button> -->
+    </div>
+  </div>
+
   <div id="wrapper" class="wrapper">
   <?php include 'header.php'; ?>
     <main class="main">
@@ -15,7 +46,7 @@
         <div class="main-container container">
           <div id="links-container">
             <div><h1 id="my-links">Мои ссылки</h1></div>
-              <button class="links-button">
+              <button class="links-button open-modal-button" onclick="openModal()">
                 <div class="create-link-text">Создать ссылку</div>
                 <div class="create-link-icon">C</div>
               </button>
@@ -33,7 +64,6 @@
                 <option value="name">по имени</option>
             </select>
           </div>
-
         </div>
       </div>
       
@@ -124,7 +154,7 @@
             <img src="images/1.png" alt="callwaitingsvg169" class="frame-callwaitingsvg">
           </div>
           <div id="button-wrapper">
-            <button id="second-button-for-creation-link">
+            <button class="links-button open-modal-button" onclick="openModal()">
               <div class="create-link-text">Создать ссылку</div>
               <div class="create-link-icon">C</div>
             </button>
@@ -137,6 +167,6 @@
   </div>
   
   
-  <script src="main.js"></script>
+  <script src="main.js?v=11"></script>
 </body>
 </html>

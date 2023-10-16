@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+	z-index: 1;
 }
 
 /* p {
@@ -76,11 +77,26 @@
   align-items: flex-end;
   background-color: black;
   color: white;
-  padding: 10px;
+  padding: 5px 10px 10px 10px;
   border-radius: 8px;
   position: relative;
   border: 0px;
 }
+
+.links-button-2 {
+	/* display: flex; */
+	align-items: center; /* Это центрирует элемент по вертикали */
+	justify-content: center; /* Это центрирует элемент по горизонтали */
+	background-color: black;
+	color: white;
+	padding: 10px;
+	border-radius: 8px;
+	border: 0px;
+	width: 68%;
+	margin-top: 25px;
+	margin-bottom: 10px;
+  }
+  
 
 .create-link-text {
   margin-right: 5px;
@@ -686,6 +702,31 @@ html {
 	margin-bottom: 10px;
 }
 
+.input-on-modal-window {
+	/* width: 200px; */
+	width: 55%;	
+	font-family: inherit;
+	font-weight: inherit;
+	margin: 0;
+	appearance: none;
+	background-color: #fff;
+	padding: .5rem .75rem;
+	--tw-shadow: 0 0 #0000;
+	border-radius: .375rem;
+	border-width: 1px;
+	--tw-border-opacity: 1;
+	border: none;
+	border-color: rgb(209 213 219/var(--tw-border-opacity));
+	/* box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; */
+	border: 2px solid rgb(242, 243, 245);
+	/* padding-left: 2.5rem; */
+	font-size: .95rem;
+	line-height: 1.25rem;
+	--tw-text-opacity: 1;
+	color: rgb(0 0 0/var(--tw-text-opacity));
+	margin-bottom: 10px;
+}
+
 #settings-page-label-for-name, #settings-page-label-for-email, #settings-page-label-for-deletion{
 	font-size: 20px;
 	font-weight: 500;
@@ -721,4 +762,150 @@ html {
 	/* border: 2px solid rgb(227, 230, 235);	 */
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Стили для модального окна */
+.modal {
+	display: none;
+	justify-content: center; /* Центрируем по горизонтали */
+	align-items: center; /* Центрируем по вертикали */
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.7);
+	z-index: 2;
+  }
+
+.modal-content {
+	background-color: #fff;
+	width: 50%;
+	width: 500px;
+	margin: 20px auto;
+	padding: 20px;
+	border-radius: 10px;
+	text-align: center;
+	align-items: center;
+	z-index: 2;
+}
+
+#center-part-of-modal-window{
+	background-color: rgb(249, 250, 251);
+	margin: 0px -20px;
+	border-top: 2px solid rgb(227, 230, 235);
+	border-bottom: 2px solid rgb(227, 230, 235);
+	display: flex;
+  	justify-content: space-between;
+	padding: 0 20%;
+	flex-direction: column; 
+	align-items: flex-start; 
+	background: linear-gradient(to bottom, rgba(249, 250, 251, 1) 90%, rgb(230, 231, 232));
+}
+
+#modal-window-wrapper-for-long-link{
+	/* flex-direction: column; 
+	align-items: flex-start;  */
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+#modal-window-label-for-input-long-link{
+	display: block;
+	margin-top: 20px;
+	font-size: 14px;
+}
+
+#modal-window-label-for-input-short-link{
+	display: block;
+	font-size: 14px;
+}
+
+#modal-window-input-long-link{
+	width: 100%;
+}
+
+#modal-window-input-short-link{
+	width: 65%;
+	margin-left: -5px;
+	border-radius: 0px 7px 7px 0px;
+}
+
+#modal-window-row-with-label-and-button{
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	margin-top: 20px;
+
+}
+
+#modal-window-button-for-generating-link{
+	background-color: rgb(249, 250, 251);
+}
+
+#modal-window-select-link{
+	border: 2px solid rgb(242, 243, 245);
+	border-right: 0px;
+	border-radius: 7px 0px 0px 7px;
+	font-family: inherit;
+	font-size: 100%;
+	font-weight: inherit;
+	line-height: inherit;
+	color: inherit;
+	margin: 0;
+	text-transform: none;
+	cursor: pointer;
+	-webkit-appearance: button;
+	background-image: none;
+	width: 35%;
+	padding-right: .75rem;
+	padding-top: .4rem;
+	padding-bottom: .45rem;
+	--tw-bg-opacity: 1;
+	background-color: rgb(255 255 255/var(--tw-bg-opacity));
+	/* --tw-shadow: 0 1px 3px 0 rgba(0,0,0,.1),0 1px 2px -1px rgba(0,0,0,.1);
+	--tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color),0 1px 2px -1px var(--tw-shadow-color);
+	box-shadow: var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow); */
+	transition-property: all;
+	transition-timing-function: cubic-bezier(.4,0,.2,1);
+	transition-duration: 75ms;
+	padding-left: 1rem;	
+	margin-right: 0px;
+	background-color: rgb(249, 250, 251);
+}
+
+#modal-background {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.1); 
+	z-index: 2; 
+}
+
+#img-in-modal-window{
+	margin-top: 20px;
+	margin-bottom: 10px;
+	height: 40px;
+}
+
+#modal-window-create-link{
+	font-size: 18px;
+	font-weight: 500;
+	margin-bottom: 30px;
+}
+  
   /*  */
