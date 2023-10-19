@@ -17,7 +17,7 @@ function checkLoginData(email, password) {
     },
     success: function(response) {
       if (response === 'correct') {
-        window.location.href = "main.php";
+        window.location.href = "main.html";
       } else {
         Swal.fire({
           icon: 'error',

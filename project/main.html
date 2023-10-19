@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/main_style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/main.js"></script>
+  <title>Document</title>
+</head>
+<body>
+
+  <div id="modal-background"></div>
+  <!-- Модальное окно -->
+  <div id="myModal" class="modal" onclick="closeModal()">
+    <div class="modal-content" onclick="event.stopPropagation();">
+      <img id="img-in-modal-window" src="images/grey-circle.png" alt="">
+      <h2 id="modal-window-create-link">Создать ссылку</h2>
+
+      <div id="center-part-of-modal-window">
+        <label id="modal-window-label-for-input-long-link" for="modal-window-input-long-link">Длинная ссылка</label>
+        <input type="text" id="modal-window-input-long-link" class="input-on-modal-window" placeholder="https://t.me/nilurl">
+        <div id="modal-window-row-with-label-and-button">
+          <label id="modal-window-label-for-input-short-link" for="modal-window-input-short-link">Сокращенная ссылка</label>
+          <button id="modal-window-button-for-generating-link"><img id="image-for-generate-button" src="img/svg1042-arb8.svg" alt="SVG1042" class="create-link-svg"> Сгенерировать</button>
+        </div>
+        <div id="modal-window-wrapper-for-long-link">
+          <select name="modal-window-select-link" id="modal-window-select-link">
+              <option value="nilurl.ru" selected>nilurl.ru</option>
+              <option value="nilurl2.ru">nilurl2.ru</option>
+          </select>
+          <input type="text" id="modal-window-input-short-link" class="input-on-modal-window" placeholder="nilurl">
+        </div>
+      </div>
+
+      <button id = "generate-link" class="links-button-2">
+        <div class="create-link-text-2">Создать ссылку</div>
+      </button><br>
+    </div>
+  </div>
+
+  <button class="links-button open-modal-button" onclick="openModal()">
+    <div class="create-link-text">Создать ссылку</div>
+    <div class="create-link-icon">C</div>
+  </button>
+  
+  
+</body>
+</html>

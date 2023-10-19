@@ -16,6 +16,8 @@ if ($result->num_rows > 0) {
     $hash_db = $row['password'];
 
     if (password_verify($password_input, $hash_db)) {
+        session_start();
+        $_SESSION['email'] = $email_db;
         $stmt->close();
         $conn->close();
         echo 'correct';
