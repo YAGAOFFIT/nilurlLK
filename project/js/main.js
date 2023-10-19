@@ -27,7 +27,7 @@ $(document).ready(function() {
       let shortLink = document.getElementById("modal-window-input-short-link")
       let fullShortLink = "http://" + domenElement.value + "/" + shortLink.value;
 
-      if (isValidURL(fullShortLink) && shortLink.value.length >= 6) {
+      if (isValidURL(fullShortLink) && shortLink.value.length >= 6 && shortLink.value.length <=20 ) {
         checkUniqueLink(fullShortLink)
           .then(function(result) {
             if (result === 'unique') {
@@ -52,7 +52,7 @@ $(document).ready(function() {
         Swal.fire({
           icon: 'error',
           title: 'Введёные данные неккоректны',
-          text: 'Данный короткий URL не может существовать или сокращённая ссылка меньше 6 символов.',
+          text: 'Данный короткий URL не может существовать или сокращённая ссылка меньше 6 или больше 20 символов.',
         });
       }
     } else {
