@@ -1,6 +1,29 @@
 import React, { useEffect } from 'react';
-import './style.css'; 
+import './style.css';
 import Header from './Header';
+
+function openModal() {
+  document.getElementById("myModal").style.display = "flex";
+  document.getElementById("modal-background").style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById("myModal").style.display = "none";
+  document.getElementById("modal-background").style.display = "none";
+}
+
+function toggleTagList() {
+  let svg = document.getElementById("icon");
+  let tag = document.querySelector(".search-tag__list");
+
+  if (svg.classList.contains('rotate90')) {
+    svg.classList.remove('rotate90');
+    tag.style.display = "none";
+  } else {
+    svg.classList.add('rotate90');
+    tag.style.display = "grid";
+  }
+}
 
 function App() {
   useEffect(() => {
@@ -13,24 +36,10 @@ function App() {
     };
   }, []);
 
-  const toggleTagList = () => {
-    let svg = document.getElementById("icon");
-    let tag = document.querySelector(".search-tag__list");
-
-    if (svg.classList.contains('rotate90')) {
-      svg.classList.remove('rotate90');
-      tag.style.display = "none";
-    } else {
-      svg.classList.add('rotate90');
-      tag.style.display = "grid";
-    }
-  };
-
   return (
     <div>
       <div id="modal-background"></div>
-      {/* <div id="myModal" className="modal" onClick={closeModal}> */}
-      <div id="myModal" className="modal">
+      <div id="myModal" className="modal" onClick={closeModal}>
         <div className="modal-content" onClick={(event) => event.stopPropagation()}>
           <img id="img-in-modal-window" src="images/grey-circle.png" alt="" />
           <h2 id="modal-window-create-link">Создать ссылку</h2>
@@ -64,8 +73,7 @@ function App() {
             <div className="main-container container">
               <div id="links-container">
                 <div><h1 id="my-links">Мои ссылки</h1></div>
-                {/* <button className="links-button open-modal-button" onClick={openModal}> */}
-                <button className="links-button open-modal-button">
+                <button className="links-button open-modal-button" onClick={openModal}>
                   <div className="create-link-text">Создать ссылку</div>
                   <div className="create-link-icon">C</div>
                 </button>
@@ -168,8 +176,7 @@ function App() {
                 <img src="images/1.png" alt="callwaitingsvg169" className="frame-callwaitingsvg" />
               </div>
               <div id="button-wrapper">
-                {/* <button className="links-button open-modal-button" onClick={openModal}> */}
-                <button className="links-button open-modal-button">
+                <button className="links-button open-modal-button" onClick={openModal}>
                   <div className="create-link-text">Создать ссылку</div>
                   <div className="create-link-icon">C</div>
                 </button>
@@ -179,7 +186,6 @@ function App() {
           </div>
         </main>
       </div>
-      <script src="main.js?v=11"></script>
     </div>
   );
 }
