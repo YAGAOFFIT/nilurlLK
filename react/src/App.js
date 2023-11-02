@@ -4,6 +4,7 @@ import Settings from './components/Settings';
 import Cabinet from './components/Cabinet';
 import Login from './components/Login';
 import Regest from './components/Regest';
+import Download from './components/Download';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/cabinet" element={<Cabinet />} />
           <Route path="/login" element={<Login />} />   
           <Route path="/regest" element={<Regest />} />               
+          <Route path="/download" element={<Download />} />        
         </Routes>
       </Router>
     </div>

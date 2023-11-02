@@ -158,17 +158,53 @@ import Header from './Header';
 import Filters from "./filter design/Filter";
 import Link from "./link design/Link";
 import Swal from 'sweetalert2';  
+import Cookies from 'js-cookie';
 
 function Cab() {
   const [shortLink, setShortLink] = useState('');
+  const [sessionTimeLeft, setSessionTimeLeft] = useState(null);
 
   useEffect(() => {
-    const list = document.querySelector(".search-tag__btn");
-    list.addEventListener('click', toggleTagList);
-    return () => {
-      list.removeEventListener('click', toggleTagList);
+    const checkSession = () => {
+      const session = Cookies.get('session');
+      const expiryTime = Cookies.get('session_expiry_time');
+
+      if (!session || !expiryTime || new Date(expiryTime) < new Date()) {
+        // Если сессия отсутствует или истекла, устанавливаем новую
+        const newExpiryTime = new Date(new Date().getTime() + 1 * 60 * 1000); // 1 час
+        Cookies.set('session', 'active');
+        Cookies.set('session_expiry_time', newExpiryTime.toISOString());
+        setSessionTimeLeft(1 * 60); // 1 час в секундах
+        console.log('Новая сессия открыта на 1 час');
+      
+        // Перевод на страницу авторизации
+        window.location.href = "/login";
+      } else {
+        // Если сессия существует, вычисляем оставшееся время
+        const timeLeft = (new Date(expiryTime).getTime() - new Date().getTime()) / 1000;
+        setSessionTimeLeft(Math.max(timeLeft, 0));        
+      }
     };
+
+    checkSession();
+
+    // Устанавливаем таймер для отображения оставшегося времени сессии
+    const timerId = setInterval(() => {
+      setSessionTimeLeft((time) => Math.max(time - 1, 0));
+    }, 1000);
+
+    // Очищаем таймер при размонтировании компонента
+    return () => clearInterval(timerId);
   }, []);
+
+  useEffect(() => {
+    if (sessionTimeLeft !== null) {
+      const roundedTimeLeft = Math.round(sessionTimeLeft);
+      console.log(`Оставшееся время сессии: ${Math.floor(roundedTimeLeft / 60)} минут ${roundedTimeLeft % 60} секунд`);
+    }
+  }, [sessionTimeLeft]);
+  
+  
 
   const openModal = () => {
     document.getElementById("myModal").style.display = "flex";

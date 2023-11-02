@@ -36,7 +36,7 @@
   align-items: center;
 }
 
-#logo {
+#logo, #logo2, #logo3 {
   margin-right: 20px;
 }
 
@@ -911,3 +911,20 @@ html {
 
   
   /*  */
+
+.rectangle1{
+	height: 30px;
+	width: 180px;
+}
+
+.square1{
+	height: 300px;
+	margin-left: -30px;
+	margin-right: -50px;
+}
+
+.square2{
+	height: 500px;
+	width: 100%;
+	margin-right: -50px;
+}
