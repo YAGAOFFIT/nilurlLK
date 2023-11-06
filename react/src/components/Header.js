@@ -15,6 +15,8 @@ function Header() {
               <div id="profile-text">Артемий Журавлёв</div>
             </div>
             <div id="header-links">
+              <a id="header-functional-link" href="/cabinet">Личный кабинет</a>
+              <a id="header-help-link" href="/settings">Настройки</a>
               <a id="header-functional-link" href="/">Функционал</a>
               <a id="header-help-link" href="/">Помощь</a>
             </div>

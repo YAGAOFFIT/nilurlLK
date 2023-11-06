@@ -1,8 +1,33 @@
 import React, { useEffect } from 'react';
-import './style.css'; 
+import './style.css';
 import Header from './Header';
+import Filters from "./filter design/Filter";
+import Link from "./link design/Link";
 
-function App() {
+function openModal() {
+  document.getElementById("myModal").style.display = "flex";
+  document.getElementById("modal-background").style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById("myModal").style.display = "none";
+  document.getElementById("modal-background").style.display = "none";
+}
+
+function toggleTagList() {
+  let svg = document.getElementById("icon");
+  let tag = document.querySelector(".search-tag__list");
+
+  if (svg.classList.contains('rotate90')) {
+    svg.classList.remove('rotate90');
+    tag.style.display = "none";
+  } else {
+    svg.classList.add('rotate90');
+    tag.style.display = "grid";
+  }
+}
+
+function Cab() {
   useEffect(() => {
     // Обработчик для показа/скрытия списка тегов
     const list = document.querySelector(".search-tag__btn");
@@ -13,24 +38,10 @@ function App() {
     };
   }, []);
 
-  const toggleTagList = () => {
-    let svg = document.getElementById("icon");
-    let tag = document.querySelector(".search-tag__list");
-
-    if (svg.classList.contains('rotate90')) {
-      svg.classList.remove('rotate90');
-      tag.style.display = "none";
-    } else {
-      svg.classList.add('rotate90');
-      tag.style.display = "grid";
-    }
-  };
-
   return (
     <div>
       <div id="modal-background"></div>
-      {/* <div id="myModal" className="modal" onClick={closeModal}> */}
-      <div id="myModal" className="modal">
+      <div id="myModal" className="modal" onClick={closeModal}>
         <div className="modal-content" onClick={(event) => event.stopPropagation()}>
           <img id="img-in-modal-window" src="images/grey-circle.png" alt="" />
           <h2 id="modal-window-create-link">Создать ссылку</h2>
@@ -64,8 +75,7 @@ function App() {
             <div className="main-container container">
               <div id="links-container">
                 <div><h1 id="my-links">Мои ссылки</h1></div>
-                {/* <button className="links-button open-modal-button" onClick={openModal}> */}
-                <button className="links-button open-modal-button">
+                <button className="links-button open-modal-button" onClick={openModal}>
                   <div className="create-link-text">Создать ссылку</div>
                   <div className="create-link-icon">C</div>
                 </button>
@@ -88,100 +98,31 @@ function App() {
           </div>
           <div className="content-container container">
             <div id="left-content" className="search">
-              <div className="search-iner">
-                <div className="search-iner__link">
-                  <div className="search-iner__link_name">
-                    <h3 id="filter_label">Фильтр</h3>
-                  </div>
-                  <div className="search-iner__input">
-                    <div className="search-iner__input_icon">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="11" cy="11" r="8"></circle>
-                        <line x1="21" x2="16.65" y1="21" y2="16.65"></line>
-                      </svg>
-                    </div>
-                    <input type="text" className="search-filter__inp" placeholder="Поиск..." value="" />
-                  </div>
-                </div>
-                <fieldset className="search-tag">
-                  <div className="search-tag__name">
-                    <button className="search-tag__btn">
-                      <svg id="icon" className="" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="9 18 15 12 9 6"></polyline>
-                      </svg>
-                      <h4>Теги</h4>
-                    </button>
-                    <button id="add-tag-button" className="search-tag__btn_add">Добавить</button>
-                  </div>
-                  <div className="search-tag__list" style={{ height: '210px' }}>
-                    <div className="search-tag__list_item">
-                      <input id="dub.sh" name="dub.sh" type="radio" className="search-tag__list_item_inp" checked />
-                      <label htmlFor="dub.sh" className="search-tag__list_item_name">
-                        <p>dub.sh</p>
-                      </label>
-                    </div>
-                    <div className="search-tag__list_item">
-                      <input id="dub.sh" name="dub.sh" type="radio" className="search-tag__list_item_inp" checked />
-                      <label htmlFor="dub.sh" className="search-tag__list_item_name">
-                        <p>dub.sh</p>
-                      </label>
-                    </div>
-                    <div className="search-tag__list_item">
-                      <input id="dub.sh" name="dub.sh" type="radio" className="search-tag__list_item_inp" checked />
-                      <label htmlFor="dub.sh" className="search-tag__list_item_name">
-                        <p>dub.sh</p>
-                      </label>
-                    </div>
-                    <div className="search-tag__list_item">
-                      <input id="dub.sh" name="dub.sh" type="radio" className="search-tag__list_item_inp" checked />
-                      <label htmlFor="dub.sh" className="search-tag__list_item_name">
-                        <p>dub.sh</p>
-                      </label>
-                    </div>
-                    <div className="search-tag__list_item">
-                      <input id="dub.sh" name="dub.sh" type="radio" className="search-tag__list_item_inp" checked />
-                      <label htmlFor="dub.sh" className="search-tag__list_item_name">
-                        <p>dub.sh</p>
-                      </label>
-                    </div>
-                    <div className="search-tag__list_item">
-                      <input id="dub.sh" name="dub.sh" type="radio" className="search-tag__list_item_inp" checked />
-                      <label htmlFor="dub.sh" className="search-tag__list_item_name">
-                        <p>dub.sh</p>
-                      </label>
-                    </div>
-                    <div className="search-tag__list_item">
-                      <input id="dub.sh" name="dub.sh" type="radio" className="search-tag__list_item_inp" checked />
-                      <label htmlFor="dub.sh" className="search-tag__list_item_name">
-                        <p>dub.sh</p>
-                      </label>
-                    </div>
-                  </div>
-                </fieldset>
-              </div>
+              <Filters/>
             </div>
             <div className="right-content">
-              <h2 id="result-of-searching-links">
-                Ссылок не найдено
-              </h2>
-              <div>
-                <img src="images/1.png" alt="callwaitingsvg169" className="frame-callwaitingsvg" />
+              <Link/>
+              <div style={{display:"none"}}>
+                <h2 id="result-of-searching-links">
+                  Ссылок не найдено
+                </h2>
+                <div>
+                  <img src="images/1.png" alt="callwaitingsvg169" className="frame-callwaitingsvg" />
+                </div>
+                <div id="button-wrapper">
+                  <button className="links-button open-modal-button" onClick={openModal}>
+                    <div className="create-link-text">Создать ссылку</div>
+                    <div className="create-link-icon">C</div>
+                  </button>
+                </div>
+                <p id="message-for-user">или поменяйте параметры фильтра</p>
               </div>
-              <div id="button-wrapper">
-                {/* <button className="links-button open-modal-button" onClick={openModal}> */}
-                <button className="links-button open-modal-button">
-                  <div className="create-link-text">Создать ссылку</div>
-                  <div className="create-link-icon">C</div>
-                </button>
-              </div>
-              <p id="message-for-user">или поменяйте параметры фильтра</p>
             </div>
           </div>
         </main>
       </div>
-      <script src="main.js?v=11"></script>
     </div>
   );
 }
 
-export default App;
+export default Cab;

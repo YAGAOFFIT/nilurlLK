@@ -5,6 +5,7 @@
 	z-index: 1;
 }
 
+
 /* p {
     margin: 0;
     padding: 0;
@@ -35,7 +36,7 @@
   align-items: center;
 }
 
-#logo {
+#logo, #logo2, #logo3 {
   margin-right: 20px;
 }
 
@@ -114,7 +115,7 @@
 
 #sorting-container.container {
   max-width: 1180px;
-  padding: 10px 10px;
+  padding: 10px 15px;
   margin: 0 auto;
 }
 
@@ -907,5 +908,23 @@ html {
 	font-weight: 500;
 	margin-bottom: 30px;
 }
+
   
   /*  */
+
+.rectangle1{
+	height: 30px;
+	width: 180px;
+}
+
+.square1{
+	height: 300px;
+	margin-left: -30px;
+	margin-right: -50px;
+}
+
+.square2{
+	height: 500px;
+	width: 100%;
+	margin-right: -50px;
+}
