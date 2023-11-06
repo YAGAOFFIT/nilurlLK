@@ -1,5 +1,4 @@
 $(document).ready(function() {
- 
   $('#loginUser').click(function() {
     var email = $('#email').val();
     var password = $('#password').val();
@@ -13,17 +12,13 @@ function checkLoginData(email, password) {
     method: 'POST',
     data: {
       email: email,
-      password:password
+      password: password
     },
     success: function(response) {
       if (response === 'correct') {
         window.location.href = "main.html";
       } else {
-        Swal.fire({
-          icon: 'error',
-          title: 'Ошибка входа',
-          text: 'Неправильный логин или пароль.',
-        });
+        $('#loginErrorModal').modal('show');
       }
     },
     error: function(xhr, status, error) {

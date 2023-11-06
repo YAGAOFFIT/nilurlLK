@@ -21,34 +21,17 @@ function checkRegistrationData(username, email) {
     success: function(response) {
       switch (response) {
         case 'invalid_username':
-          Swal.fire({
-            icon: 'error',
-            title: 'Неправильное имя пользователя',
-            text: 'Имя пользователя не может быть меньше 3 символов. Так же можно использовать только буквы английского алфавита, цифры и символ "_"',
-          });
+          showMessageModal('Неправильное имя пользователя', 'Имя пользователя не может быть меньше 3 символов. Так же можно использовать только буквы английского алфавита, цифры и символ "_"');
           break;
         case 'invalid_email':
-          Swal.fire({
-            icon: 'error',
-            title: 'Неправильный Email',
-            text: 'Почта имеет неправильный формат',
-          });
+          showMessageModal('Неправильный Email', 'Почта имеет неправильный формат');
           break;
         case 'unique':
           uniqueUser(username, email);
-          Swal.fire({
-            icon: 'success',
-            title: 'Ваш аккаунт был создан',
-            text: 'Пароль для входа был отправлен на вашу почту',
-            html: '<a href="index.html">Вернуться на страницу входа</a> ',
-          });
+          showMessageModal('Успех', 'Ваш аккаунт был создан: Пароль для входа был отправлен на вашу почту');
           break;
         case 'not_unique':
-          Swal.fire({
-            icon: 'error',
-            title: 'Данный аккаунт уже существует',
-            text: 'Выполните вход или восстановите аккаунт',
-          });
+          showMessageModal('Данный аккаунт уже существует', 'Выполните вход или восстановите аккаунт');
           break;
         default:
           console.error('Неизвестный ответ от сервера:', response);
@@ -60,6 +43,7 @@ function checkRegistrationData(username, email) {
     }
   });
 }
+
 function uniqueUser(username, email) {
   var userId = "user" + Date.now();
   saveUser(userId, email, username);
@@ -101,4 +85,10 @@ function emailSend(userId, email, username, type) {
       console.error("Ошибка при отправке письма:", error);
     }
   });
+}
+
+function showMessageModal(title, message) {
+  $('#messageModal').find('.modal-title').text(title);
+  $('#messageText').text(message);
+  $('#messageModal').modal('show');
 }

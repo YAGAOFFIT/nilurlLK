@@ -27,40 +27,23 @@ $(document).ready(function() {
       let shortLink = document.getElementById("modal-window-input-short-link")
       let fullShortLink = "http://" + domenElement.value + "/" + shortLink.value;
 
-      if (isValidURL(fullShortLink) && shortLink.value.length >= 6 && shortLink.value.length <=20 ) {
+      if (isValidURL(fullShortLink) && shortLink.value.length >= 6 && shortLink.value.length <= 20) {
         checkUniqueLink(fullShortLink)
           .then(function(result) {
             if (result === 'unique') {
               saveLink(longLink, fullShortLink);
             } else {
-              Swal.fire({
-                icon: 'error',
-                title: 'Введёные данные неккоректны',
-                text: fullShortLink,
-              });
+              showMessageModal('Ошибка', 'Введёные данные неккоректны: ' + fullShortLink);
             }
           })
           .catch(function(error) {
-            Swal.fire({
-              icon: 'error',
-              title: 'Ошибка при проверке уникальности',
-              text: "Данный короткий url уже существует. Ошибка: " + error,
-              
-            });
+            showMessageModal('Ошибка', 'Ошибка при проверке уникальности: Данный короткий url уже существует. Ошибка: ' + error);
           });
       } else {
-        Swal.fire({
-          icon: 'error',
-          title: 'Введёные данные неккоректны',
-          text: 'Данный короткий URL не может существовать или сокращённая ссылка меньше 6 или больше 20 символов.',
-        });
+        showMessageModal('Ошибка', 'Введёные данные неккоректны: Данный короткий URL не может существовать или сокращённая ссылка меньше 6 или больше 20 символов.');
       }
     } else {
-      Swal.fire({
-        icon: 'error',
-        title: 'Введёные данные неккоректны',
-        text: 'Данный длинный URL не может существовать.',
-      });
+      showMessageModal('Ошибка', 'Введёные данные неккоректны: Данный длинный URL не может существовать.');
     }
   });
 
@@ -100,35 +83,17 @@ $(document).ready(function() {
         shortLink: shortLink
       },
       success: function() {
-        Swal.fire({
-          icon: 'success',
-          title: 'Ваш URL создан',
-          text: shortLink,
-        });
+        showMessageModal('Успех', 'Ваш URL создан: ' + shortLink);
       },
       error: function(xhr, status, error) {
-        Swal.fire({
-          icon: 'error',
-          title: 'Ошибка при сохранении URL',
-          text: error,
-        });
+        showMessageModal('Ошибка', 'Ошибка при сохранении URL: ' + error);
       }
     });
   }
+
+  function showMessageModal(title, message) {
+    $('#messageModal').find('.modal-title').text(title);
+    $('#messageText').text(message);
+    $('#messageModal').modal('show');
+  }
 });
-
-const openModalButton = document.getElementById('openModalButton');
-openModalButton.addEventListener('click', openModal);
-
-const closeButton = document.querySelector('.close');
-closeButton.addEventListener('click', closeModal);
-
-function openModal() {
-  document.getElementById("myModal").style.display = "flex";
-  document.getElementById("modal-background").style.display = "block";
-}
-
-function closeModal() {
-  document.getElementById("myModal").style.display = "none";
-  document.getElementById("modal-background").style.display = "none";
-}
