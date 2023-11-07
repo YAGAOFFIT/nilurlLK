@@ -5,6 +5,7 @@ import Cabinet from './components/Cabinet';
 import Login from './components/Login';
 import Regest from './components/Regest';
 import Download from './components/Download';
+import NotFoundPage from './components/NotFoundPage';
 
 function App() {
   return (
@@ -13,11 +14,13 @@ function App() {
         <header className="App-header">
         </header>
         <Routes>
+          <Route path="/" element={<Login />} />   
           <Route path="/settings" element={<Settings />} />
           <Route path="/cabinet" element={<Cabinet />} />
-          <Route path="/login" element={<Login />} />   
           <Route path="/regest" element={<Regest />} />               
-          <Route path="/download" element={<Download />} />        
+          <Route path="/download" element={<Download />} />          
+          {/* <Route path="/404" element={<NotFoundPage />} /> */}
+          <Route path="*" element={<NotFoundPage />} />        
         </Routes>
       </Router>
     </div>
